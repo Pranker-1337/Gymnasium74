@@ -36,8 +36,9 @@ export default function App() {
   const toggleLang = () => setLang(lang === "ru" ? "tj" : "ru");
 
   // Image URLs - using relative paths for reliability
-  const imgSchool = "/api/attachments/input_file_1.png";
-  const imgForest = "/api/attachments/input_file_0.png";
+  const isGitHubPages = window.location.hostname.includes('github.io');
+  const imgSchool = isGitHubPages ? "https://images.unsplash.com/photo-1541339907198-e08756eaa589?auto=format&fit=crop&q=80&w=2000" : "/api/attachments/input_file_1.png";
+  const imgForest = isGitHubPages ? "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=2000" : "/api/attachments/input_file_0.png";
 
   // Fallback images in case attachments are missing
   const fallbackSchool = "https://images.unsplash.com/photo-1541339907198-e08756eaa589?auto=format&fit=crop&q=80&w=2000";
